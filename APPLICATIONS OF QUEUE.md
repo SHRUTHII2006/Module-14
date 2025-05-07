@@ -32,11 +32,59 @@ To write a Python program to implement CPU Process Scheduling using a queue.
 ### PROGRAM  
 
 ```
+def CalculateWaitingTime(at, bt, N):
+
+	wt = [0]*N
+
+	wt[0] = 0
+
+	print("P.No.\tArrival Time\t" , "Burst Time\tWaiting Time")
+
+	print("1" , "\t\t" , at[0] , "\t\t" , bt[0] , "\t\t" , wt[0])
+
+	for i in range(1,5):
+
+		wt[i] = (at[i - 1] + bt[i - 1] + wt[i - 1]) - at[i]
+
+		print(i + 1 , "\t\t" , at[i] , "\t\t" , bt[i] , "\t\t" , wt[i])
+
+	average = 0.0
+
+	sum = 0
+
+	for i in range(5):
+
+		sum = sum + wt[i]
+
+		average = sum / 5
+
+	print("Average waiting time = " , average)
+
+N = 5
+
+at = [ 0, 1, 2, 3, 4 ];
+
+bt=[]
+
+for i in range(0,5):
+
+    ele = int(input())
+
+    bt.append(ele)
+
+CalculateWaitingTime(at, bt, N)
+
+
 
 ```
 
 ### OUTPUT
 
+![image](https://github.com/user-attachments/assets/5b0d6a2f-4e83-4ff7-92aa-2c4a39843c58)
+
+
 
 ### RESULT
+
+Thus the Python program to implement CPU Process Scheduling using a queue was written and executed successfully.
 
